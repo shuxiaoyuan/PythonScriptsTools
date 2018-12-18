@@ -19,7 +19,9 @@ for i in range(1, sheet.nrows):
         str(int(sheet.cell_value(i, 0))) + "," +
         str(sheet.cell_value(i, 1)) + "," +
         str(sheet.cell_value(i, 2)) + "," +
-        str(sheet.cell_value(i, 3)) + "\n" 
+        str(sheet.cell_value(i, 3)) + "," +
+        str(sheet.cell_value(i, 4)) + "," +
+        str(sheet.cell_value(i, 5)) + "\n" 
     )
-        
+
 levels.close()
