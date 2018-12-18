@@ -12,15 +12,17 @@ import xlrd
 path = "level.xlsx"
 excel = xlrd.open_workbook(path)
 sheet = excel.sheets()[0]
-levels = open("levels.txt", 'a', encoding='utf-8') 
+with open("levels.txt", "w", encoding="utf-8") as f:
+    f.write("")
+levels = open("levels.txt", 'a', encoding='utf-8')
 
 for i in range(1, sheet.nrows):
     levels.write(
-        str(int(sheet.cell_value(i, 0))) + "," +
-        str(sheet.cell_value(i, 1)) + "," +
-        str(sheet.cell_value(i, 2)) + "," +
-        str(sheet.cell_value(i, 3)) + "," +
-        str(sheet.cell_value(i, 4)) + "," +
+        str(int(sheet.cell_value(i, 0))) + ", " +
+        str(sheet.cell_value(i, 1)) + ", " +
+        str(sheet.cell_value(i, 2)) + ", " +
+        str(sheet.cell_value(i, 3)) + ", " +
+        str(sheet.cell_value(i, 4)) + ", " +
         str(sheet.cell_value(i, 5)) + "\n" 
     )
 
