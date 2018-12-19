@@ -18,12 +18,12 @@ levels = open("levels.txt", 'a', encoding='utf-8')
 
 for i in range(1, sheet.nrows):
     levels.write(
-        str(int(sheet.cell_value(i, 0))) + ", " +
+        str(int(sheet.cell_value(i, 0)) if str.strip(str(sheet.cell_value(i, 0))) else sheet.cell_value(i, 0)) + ", " +
         str(sheet.cell_value(i, 1)) + ", " +
         str(sheet.cell_value(i, 2)) + ", " +
         str(sheet.cell_value(i, 3)) + ", " +
-        str(sheet.cell_value(i, 4)) + ", " +
-        str(sheet.cell_value(i, 5)) + "\n" 
+        str(int(sheet.cell_value(i, 4)) if str.strip(str(sheet.cell_value(i, 4))) else sheet.cell_value(i, 4)) + ", " +
+        str(int(sheet.cell_value(i, 5)) if str.strip(str(sheet.cell_value(i, 5))) else sheet.cell_value(i, 5)) + "\n" 
     )
 
 levels.close()
