@@ -7,6 +7,8 @@
 @Description: 将原词典 文本文件中长度为 3~7 的单词输出到一个新的文本文件中
 '''
 
+with open("words_list.txt", "w", encoding="utf-8") as f:
+    f.write("")
 wordlist_filter = open("words_list.txt", 'a', encoding='utf-8')
 with open("wordslistexport.txt", "r", encoding='utf-8') as f:
     for line in f.readlines():
