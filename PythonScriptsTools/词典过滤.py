@@ -9,8 +9,9 @@
 
 with open("words_list.txt", "w", encoding="utf-8") as f:
     f.write("")
-wordlist_filter = open("words_list.txt", 'a', encoding='utf-8')
+wordlist = open("words_list.txt", 'a', encoding='utf-8')
 with open("wordslistexport.txt", "r", encoding='utf-8') as f:
     for line in f.readlines():
         if len(line.strip()) >= 3 and len(line.strip()) <= 7:
-            wordlist_filter.write(line)
+            wordlist.write(line)
+wordlist.close();
