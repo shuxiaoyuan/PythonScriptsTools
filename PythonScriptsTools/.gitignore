@@ -4,6 +4,9 @@
 *.pydevproject
 *.prefs
 
+# idea project file
+.idea/
+
 ######  the following is from github    ######
 
 # Byte-compiled / optimized / DLL files
