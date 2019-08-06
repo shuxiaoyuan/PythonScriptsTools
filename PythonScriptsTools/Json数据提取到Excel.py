@@ -23,7 +23,7 @@ jsonFiles = [
     os.path.join(jsonFilesPath, jsonFile) for jsonFile in os.listdir(jsonFilesPath)
     if os.path.isfile(os.path.join(jsonFilesPath, jsonFile)) and os.path.splitext(jsonFile)[1] == ".json"
 ]
-# 按文件名特点排序
+# 按文件名特点排序，lambda 返回一个 list，会按数组元素依次比较
 jsonFiles.sort(key=lambda x: list(map(int, os.path.split(x)[1].split(".")[0].split("_"))))
 
 # 设置单元格宽度
