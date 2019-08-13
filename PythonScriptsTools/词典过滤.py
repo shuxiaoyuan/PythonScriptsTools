@@ -7,11 +7,11 @@
 @Description: 将原词典 文本文件中长度为 3~7 的单词输出到一个新的文本文件中
 '''
 
-with open("words_list.txt", "w", encoding="utf-8") as f:
+with open("words.txt", "w", encoding="utf-8") as f:
     f.write("")
-wordlist = open("words_list.txt", 'a', encoding='utf-8')
+words = open("words.txt", 'a', encoding='utf-8')
 with open("wordslistexport.txt", "r", encoding='utf-8') as f:
     for line in f.readlines():
-        if len(line.strip()) >= 3 and len(line.strip()) <= 7:
-            wordlist.write(line)
-wordlist.close();
+        if len(line.strip()) == 8 or len(line.strip()) == 9:
+            words.write(line)
+words.close();
