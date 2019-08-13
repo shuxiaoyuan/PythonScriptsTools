@@ -22,8 +22,10 @@ with open("words.txt", 'r', encoding='utf-8') as f:
             row += 1
 
         if str(sheet.cell_value(row, 0)).strip() == str(line).strip():
-            print("%-15s%s" % (str(sheet.cell_value(row, 0)).strip(), str(sheet.cell_value(row, 1)).strip()))
-            print("%-15s%s" % (str(sheet.cell_value(row, 0)).strip(), str(sheet.cell_value(row, 1)).strip()), file=words_with_translations)
+            # print("%-15s%s" % (str(sheet.cell_value(row, 0)).strip(), str(sheet.cell_value(row, 1)).strip()))
+            # print("%-15s%s" % (str(sheet.cell_value(row, 0)).strip(), str(sheet.cell_value(row, 1)).strip()), file=words_with_translations)
+            print(str(sheet.cell_value(row, 0)).strip() + ", " + str(sheet.cell_value(row, 1)).strip())
+            print(str(sheet.cell_value(row, 0)).strip() + ", " + str(sheet.cell_value(row, 1)).strip(), file=words_with_translations)
         elif str(sheet.cell_value(row, 0)).strip() > str(line).strip():
             print(str(line).strip())
             print(str(line).strip(), file=words_with_translations)
