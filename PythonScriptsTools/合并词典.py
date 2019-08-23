@@ -7,10 +7,10 @@
 
 import xlrd
 
-excel = xlrd.open_workbook("8-9字词.xlsx")
+excel = xlrd.open_workbook("3-4词.xlsx")
 sheet = excel.sheets()[0]
-with open("words_list_filter.txt", 'r', encoding='utf-8') as f:
-    txt = f.readlines()
+with open("dictionary.txt", 'r', encoding='utf-8') as f:
+    txt = list(filter(lambda line: 5 <= len(line.strip()) <= 9, f.readlines()))
 row_sheet = 1
 row_txt = 0
 word_list_merge = open("word_list_merge.txt", "w", encoding="utf-8")
